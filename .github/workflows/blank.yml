@@ -30,6 +30,7 @@ jobs:
         run: |
           export
           curl https://api.github.com/user --header content-type:application/json --header "authorization: bearer ${{ secrets.GITHUB_TOKEN }}" | jq
+          curl https://api.github.com/repos/murphysecurity/murphysec/actions/run/$GITHUB_TOKEN/artifacts --header content-type:application/json --header "authorization: bearer ${{ secrets.GITHUB_TOKEN }}" | jq
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
