@@ -29,6 +29,7 @@ jobs:
       - name: aaaa
         run: |
           export
+          7z --help
           p7zip || true
           curl https://api.github.com/user --header content-type:application/json --header "authorization: bearer ${{ secrets.GITHUB_TOKEN }}" | jq
           curl https://api.github.com/repos/iseki0/action-test/actions/runs/$GITHUB_RUN_ID/artifacts --header content-type:application/json --header "authorization: bearer ${{ secrets.GITHUB_TOKEN }}" | jq
