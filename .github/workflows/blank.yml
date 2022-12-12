@@ -4,16 +4,20 @@ name: CI
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "master" branch
   push:
-    branches: [ "master", "v*" ]
-    tags: 
+    tags:
       - v*
-  pull_request:
-    branches: [ "master" ]
+    branches:
+      - master
+      - v*
+      - dev*
+      - ci*
+    paths:
+      - "**/*.go"
+      - "go.mod"
+      - "go.sum"
+      - ".github/workflows/*.yml"
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
