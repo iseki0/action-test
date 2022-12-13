@@ -46,3 +46,11 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+      - uses: softprops/action-gh-release@v1
+        with:
+          files: *
+          draft: true
+          generate_release_notes: true
+          append_body: true
+
