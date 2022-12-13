@@ -49,7 +49,7 @@ jobs:
 
       - uses: softprops/action-gh-release@v1
         with:
-          files: *
+          files: '*'
           draft: true
           generate_release_notes: true
           append_body: true
