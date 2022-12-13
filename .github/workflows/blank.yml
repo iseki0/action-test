@@ -30,17 +30,15 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-      - name: "✏️ Generate release changelog"
-        uses: heinrichreimer/github-changelog-generator-action@v2.3
-        id: changelog
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }} 
-
+      - uses: johnyherangi/create-release-notes@main
+        id: create-release-notes
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: softprops/action-gh-release@v1
         with:
           files: aa
-          body: ${{ steps.changelog.outputs.changelog }}
+          body: ${{ steps.create-release-notes.outputs.release-notes }}
           draft: true
           generate_release_notes: true
           append_body: true
