@@ -37,7 +37,7 @@ jobs:
 
       - uses: softprops/action-gh-release@v1
         with:
-          files: aa
+          files: README.md
           body: ${{ steps.create-release-notes.outputs.release-notes }}
           draft: true
           generate_release_notes: true
