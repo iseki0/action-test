@@ -4,21 +4,7 @@ name: CI
 
 # Controls when the workflow will run
 on:
-  pull_request_target:
-  push:
-    tags:
-      - v*
-    branches:
-      - master
-      - v*
-      - dev*
-      - ci*
-    paths:
-      - "**/*.go"
-      - "go.mod"
-      - "go.sum"
-      - ".github/workflows/*.yml"
-
+    push:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
